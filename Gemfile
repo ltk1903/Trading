@@ -70,3 +70,126 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+
+# A Ruby gem to load environment variables from `application.yml`
+gem 'figaro'
+
+
+# View helpers
+gem 'slim-rails'
+gem 'kaminari'
+gem 'bootstrap4-kaminari-views'
+gem 'twitter-bootstrap-rails'
+gem 'rubyzip2'
+gem 'simple_form'
+gem 'nested_form_fields'
+gem "nested_form"
+gem 'jquery-rails'
+gem 'font-awesome-rails'
+gem 'font_awesome5_rails'
+gem 'momentjs-rails'
+gem 'bootstrap3-datetimepicker-rails'
+gem 'gretel' # Breadcrumb
+gem 'select2-rails'
+gem 'ckeditor'
+gem 'js-routes', '~> 1.3'
+gem 'sassc-rails'
+
+# Controller helpers
+gem 'responders'
+
+# Model helpers
+gem 'enumerize'
+# gem 'countries', '~> 2.1', '>= 2.1.4'
+gem 'axlsx'
+gem 'ransack'
+gem 'activerecord-import'
+gem 'creek'
+gem 'spreadsheet'
+gem 'rubyXL'
+
+# Upload files
+gem 'carrierwave'
+gem 'carrierwave-base64'
+gem 'fog-aws'
+gem 'file_validators'
+gem 'rmagick'
+gem 'mini_magick'
+
+# PDF generator
+gem 'wicked_pdf'
+# gem 'wkhtmltopdf-binary-edge', '~> 0.12.6.0' 
+# gem 'wkhtmltopdf-binary', '~> 0.12.3.1'
+gem 'combine_pdf'
+
+# For Production
+gem 'rails_12factor'
+
+# Authentication
+gem 'devise'
+gem 'cancancan'
+
+gem 'iconsole', git: 'https://github.com/dtthaison/iconsole.git'
+
+# gem 'rotp'
+
+# Parse json
+gem 'oj'
+
+group :development do
+  gem 'wkhtmltopdf-binary'
+  gem 'foreman', '~> 0.87.2'
+  gem 'annotate', '~> 3.2'
+  gem 'rails-erd', '~> 1.6', '>= 1.6.1'
+end
+
+# rollbar - use to check error in server ( staging & production )
+gem 'rollbar'
+
+# sendgrid
+gem 'sendgrid-ruby'
+
+# Use Redis adapter to run Action Cable in production
+# gem 'redis'
+
+# sidekiq
+gem 'sidekiq'
+gem 'sidekiq_alive'
+gem 'sidekiq-status'
+gem 'sidekiq-scheduler'
+
+#recurring events
+gem 'montrose'
+
+# for localization
+gem 'globalize'
+
+# Logs
+gem "lograge"
+gem "logstash-event"
+
+# Soft delete DB
+gem 'paranoia'
+
+# meta tags
+gem 'meta-tags'
+
+# settings
+# gem 'rails-settings-cached'
+
+# Phone validation
+gem 'phonelib'
+
+# Track models
+gem 'paper_trail'
+
+# rails admin template
+gem 'rails_admin_rollincode', '~> 1.0'
+gem 'rails_admin', git: 'https://github.com/sferik/rails_admin.git'
+
+# for JS
+gem "jsbundling-rails", "~> 1.0"
+
+
+gem "cssbundling-rails"
