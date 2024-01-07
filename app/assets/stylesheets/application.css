@@ -13,13 +13,15 @@
  *= require_tree .
  *= require_self
  *= require font-awesome
+ *= require jquery-ui/datepicker
  
- *= require ./plugin/css/materialdesignicons.min
- *= require ./plugin/css/vendor.bundle.base
- *= require ./plugin/css/jquery-jvectormap
- *= require ./plugin/css/flag-icon.min
- *= require ./plugin/css/owl.carousel.min
- *= require ./plugin/css/owl.theme.default.min
- *= require ./plugin/css/style
+
+ *= require plugin/css/materialdesignicons.min
+ *= require plugin/css/vendor.bundle.base
+ *= require plugin/css/jquery-jvectormap
+ *= require plugin/css/flag-icon.min
+ *= require plugin/css/owl.carousel.min
+ *= require plugin/css/owl.theme.default.min
+ *= require plugin/css/style
  */
 
