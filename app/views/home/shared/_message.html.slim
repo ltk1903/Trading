@@ -1,5 +1,36 @@
 .row
-  .col-md-6.col-xl-4.grid-margin.stretch-card
+  .col-md-4.col-xl-4.grid-margin.stretch-card
+    .card
+      .card-body
+        h4.card-title
+          | Portfolio Slide
+        #owl-carousel-basic.owl-carousel.owl-theme.full-width.owl-carousel-dash.portfolio-carousel
+          .item
+            = image_tag("plugin/dashboard/Rectangle.jpg") 
+          .item
+            = image_tag("plugin/dashboard/Img_5.jpg") 
+          .item
+            = image_tag("plugin/dashboard/img_6.jpg") 
+        .d-flex.py-4
+          .preview-list.w-100
+            .preview-item.p-0
+              .preview-thumbnail
+                = image_tag("plugin/faces/face12.jpg", class: "rounded-circle") 
+              .preview-item-content.d-flex.flex-grow
+                .flex-grow
+                  .d-flex.d-md-block.d-xl-flex.justify-content-between
+                    h6.preview-subject
+                      | CeeCee Bass
+                    p.text-muted.text-small
+                      | 4 Hours Ago
+                  p.text-muted
+                    | Well, it seems to be working now.
+        p.text-muted
+          | Well, it seems to be working now. 
+        .progress.progress-md.portfolio-progress
+          .progress-bar.bg-success[role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"]
+  
+  .col-md-8.col-xl-8.grid-margin.stretch-card
     .card
       .card-body
         .d-flex.flex-row.justify-content-between
@@ -56,74 +87,4 @@
                     | 4 Hours Ago
                 p.text-muted
                   | Thanks a lot. It was easy to fix it .
-  .col-md-6.col-xl-4.grid-margin.stretch-card
-    .card
-      .card-body
-        h4.card-title
-          | Portfolio Slide
-        #owl-carousel-basic.owl-carousel.owl-theme.full-width.owl-carousel-dash.portfolio-carousel
-          .item
-            = image_tag("plugin/dashboard/Rectangle.jpg") 
-          .item
-            = image_tag("plugin/dashboard/Img_5.jpg") 
-          .item
-            = image_tag("plugin/dashboard/img_6.jpg") 
-        .d-flex.py-4
-          .preview-list.w-100
-            .preview-item.p-0
-              .preview-thumbnail
-                = image_tag("plugin/faces/face12.jpg", class: "rounded-circle") 
-              .preview-item-content.d-flex.flex-grow
-                .flex-grow
-                  .d-flex.d-md-block.d-xl-flex.justify-content-between
-                    h6.preview-subject
-                      | CeeCee Bass
-                    p.text-muted.text-small
-                      | 4 Hours Ago
-                  p.text-muted
-                    | Well, it seems to be working now.
-        p.text-muted
-          | Well, it seems to be working now. 
-        .progress.progress-md.portfolio-progress
-          .progress-bar.bg-success[role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"]
-  .col-md-12.col-xl-4.grid-margin.stretch-card
-    .card
-      .card-body
-        h4.card-title
-          | To do list
-        .add-items.d-flex
-          input.form-control.todo-list-input[type="text" placeholder="enter task.."]
-          button.add.btn.btn-primary.todo-list-add-btn
-            | Add
-        .list-wrapper
-          ul.d-flex.flex-column-reverse.text-white.todo-list.todo-list-custom
-            li
-              .form-check.form-check-primary
-                label.form-check-label
-                  input.checkbox[type="checkbox"]
-                  |  Create invoice 
-              i.remove.mdi.mdi-close-box
-            li
-              .form-check.form-check-primary
-                label.form-check-label
-                  input.checkbox[type="checkbox"]
-                  |  Meeting with Alita 
-              i.remove.mdi.mdi-close-box
-            li.completed
-              .form-check.form-check-primary
-                label.form-check-label
-                  input.checkbox[type="checkbox" checked]
-                  |  Prepare for presentation 
-              i.remove.mdi.mdi-close-box
-            li
-              .form-check.form-check-primary
-                label.form-check-label
-                  input.checkbox[type="checkbox"]
-                  |  Plan weekend outing 
-              i.remove.mdi.mdi-close-box
-            li
-              .form-check.form-check-primary
-                label.form-check-label
-                  input.checkbox[type="checkbox"]
-                  |  Pick up kids from school 
-              i.remove.mdi.mdi-close-box
+  
