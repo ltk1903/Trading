@@ -1,0 +1,10 @@
+h1 Editing hold
+
+== render "form", hold: @hold
+
+br
+
+div
+  => link_to "Show this hold", @hold
+  '|
+  =< link_to "Back to holds", holds_path

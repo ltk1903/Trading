@@ -4,7 +4,7 @@
     return this.addBack.apply(this, arguments);
   }
   $(function() {
-    if ($("#total-balance-protfolio").length) {
+    if ($("#holding_piechart").length) {
       var areaData = {
         labels: ["Future","Spot", "Holding", "Cash"],
         datasets: [{
@@ -66,7 +66,7 @@
           ctx.save();
         }
       }
-      var transactionhistoryChartCanvas = $("#total-balance-protfolio").get(0).getContext("2d");
+      var transactionhistoryChartCanvas = $("#holding_piechart").get(0).getContext("2d");
       var transactionhistoryChart = new Chart(transactionhistoryChartCanvas, {
         type: 'doughnut',
         data: areaData,

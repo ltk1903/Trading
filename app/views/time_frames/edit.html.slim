@@ -1,0 +1,10 @@
+h1 Editing time frame
+
+== render "form", time_frame: @time_frame
+
+br
+
+div
+  => link_to "Show this time frame", @time_frame
+  '|
+  =< link_to "Back to time frames", time_frames_path

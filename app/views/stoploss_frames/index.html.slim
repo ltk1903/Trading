@@ -1,0 +1,11 @@
+p style="color: green" = notice
+
+h1 Stoploss frames
+
+#stoploss_frames
+  - @stoploss_frames.each do |stoploss_frame|
+    == render stoploss_frame
+    p
+      = link_to "Show this stoploss frame", stoploss_frame
+
+= link_to "New stoploss frame", new_stoploss_frame_path

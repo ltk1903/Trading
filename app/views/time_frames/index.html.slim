@@ -1,0 +1,11 @@
+p style="color: green" = notice
+
+h1 Time frames
+
+#time_frames
+  - @time_frames.each do |time_frame|
+    == render time_frame
+    p
+      = link_to "Show this time frame", time_frame
+
+= link_to "New time frame", new_time_frame_path

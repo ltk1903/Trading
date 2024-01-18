@@ -6,6 +6,37 @@ ul.nav
       span.menu-title
         | Dashboard
   li.nav-item.menu-items
+    = link_to trades_path, class: "nav-link" do
+      span.menu-icon
+        i.mdi.mdi-playlist-play
+      span.menu-title
+        | Trading
+  li.nav-item.menu-items
+    = link_to holds_path, class: "nav-link" do
+      span.menu-icon
+        i.mdi.mdi-playlist-play
+      span.menu-title
+        | Holding
+  li.nav-item.menu-items
+    = link_to home_planning_path, class: "nav-link" do
+      span.menu-icon
+        i.mdi.mdi-playlist-play
+      span.menu-title
+        | Planning
+  li.nav-item.menu-items
+    = link_to home_sharing_path, class: "nav-link" do
+      span.menu-icon
+        i.mdi.mdi-playlist-play
+      span.menu-title
+        | Sharing
+  li.nav-item.menu-items
+    = link_to home_setting_path, class: "nav-link" do
+      span.menu-icon
+        i.mdi.mdi-playlist-play
+      span.menu-title
+        | Setting
+
+  li.nav-item.menu-items
     a.nav-link[data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic"]
       span.menu-icon
         i.mdi.mdi-laptop
@@ -23,12 +54,7 @@ ul.nav
         li.nav-item
           a.nav-link[href="pages/ui-features/typography.html"]
             | Typography
-  li.nav-item.menu-items
-    a.nav-link[href="pages/forms/basic_elements.html"]
-      span.menu-icon
-        i.mdi.mdi-playlist-play
-      span.menu-title
-        | Form Elements
+  
   li.nav-item.menu-items
     a.nav-link[href="pages/tables/basic-table.html"]
       span.menu-icon

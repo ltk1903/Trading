@@ -1,0 +1,67 @@
+.card
+  .card-body
+    .d-flex.flex-row.justify-content-between
+      h4.card-title
+        | Entry
+      p.text-muted.mb-1.small
+        | View all
+    .holding-list
+      .table-responsive.mt-4
+        table.table
+          colgroup
+            col width='10%'
+            col width='20%'
+            col width='20%'
+            col width='20%'
+            col width='20%'
+            col width='10%'
+            
+          thead
+            tr.bg-dark
+              td #
+              td Symbol
+              td Entry 
+              td Amount
+              td Target
+              td PNL
+          tbody
+            tr
+              td 1
+              td BTC
+              td 40.000
+              td 5
+              td 200.000
+              td.text-right.font-weight-medium
+                span.text-success.ml-2  +3.5% 
+            tr
+              td 2
+              td ETH
+              td 20.000
+              td 20
+              td 100.000
+              td.text-right.font-weight-medium
+                span.text-success.ml-2  +10.5% 
+            tr
+              td 3
+              td BNB
+              td 200
+              td 20
+              td 1000
+              td.text-right.font-weight-medium
+                span.text-success.ml-2  +10.5% 
+            tr
+              td 4
+              td ICP
+              td 10
+              td 2000
+              td 1000
+              td.text-right.font-weight-medium
+                span.text-success.ml-2  +100.5% 
+            tr
+              td 5
+              td MATIC
+              td 100
+              td 2000
+              td 1000
+              td.text-right.font-weight-medium
+                span.text-danger.ml-2  -10.5% 

@@ -1,0 +1,2 @@
+class StoplossFrame < ApplicationRecord
+end
