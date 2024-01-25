@@ -20,7 +20,8 @@ html
 
         .main-panel
           .content-wrapper
-            = render "layouts/shared/alert"
+            / = render "layouts/shared/alert"
+            = bootstrap_flash
             = yield
           
           footer.footer 

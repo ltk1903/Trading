@@ -43,12 +43,58 @@
         i.mdi.mdi-menu-down.d-none.d-sm-block
         span.count.bg-danger
 
+    - if user_signed_in?
+      li.nav-item.dropdown
+        a#profileDropdown.nav-link[href="#" data-toggle="dropdown"]
+          .navbar-profile
+            = image_tag("plugin/faces/face15.jpg", class: "img-xs rounded-circle" )
+            p.mb-0.d-none.d-sm-block.navbar-profile-name
+              = current_user.name || current_user.email
+            i.mdi.mdi-menu-down.d-none.d-sm-block
+        .dropdown-menu.dropdown-menu-right.navbar-dropdown.preview-list[aria-labelledby="profileDropdown"]
+          h6.p-3.mb-0
+            | Tài khoản
+          .dropdown-divider
+          = link_to user_profile_path(current_user.profile_id), class: 'dropdown-item preview-item' do
+            .preview-thumbnail
+              .preview-icon.bg-dark.rounded-circle
+                i.mdi.mdi-settings.text-success
+            .preview-item-content
+              p.preview-subject.mb-1
+                | Thông tin tài khoản
 
-    li.nav-item.dropdown
-      a#profileDropdown.nav-link[href="#" data-toggle="dropdown"]
+          .dropdown-divider
+          a.dropdown-item.preview-item
+            .preview-thumbnail
+              .preview-icon.bg-dark.rounded-circle
+                i.mdi.mdi-settings.text-success
+            .preview-item-content
+              p.preview-subject.mb-1
+                | Settings
+          .dropdown-divider
+          = link_to edit_user_password_path(current_user), class: 'dropdown-item preview-item' do
+            .preview-thumbnail
+              .preview-icon.bg-dark.rounded-circle
+                i.mdi.mdi-logout.text-danger
+            .preview-item-content
+              p.preview-subject.mb-1
+                | Change Password
 
-      .navbar-profile
-        = link_to new_user_session_path do
-          = image_tag("plugin/faces/face15.jpg", class: "img-xs rounded-circle" ) 
-          p.mb-0.d-none.d-sm-block.navbar-profile-name
-            | Guest
+
+          .dropdown-divider
+          = link_to destroy_user_session_path, :method => :delete, :data => { :no_turbolink => true }, class: 'dropdown-item preview-item' do
+            .preview-thumbnail
+              .preview-icon.bg-dark.rounded-circle
+                i.mdi.mdi-logout.text-danger
+            .preview-item-content
+              p.preview-subject.mb-1
+                | Logout
+   
+    - else
+      li.nav-item.dropdown
+        = link_to new_user_session_path, class: 'nav-link' do
+          .navbar-profile
+            = image_tag("plugin/faces/face15.jpg", class: "img-xs rounded-circle" )
+            p.mb-0.d-none.d-sm-block.navbar-profile-name
+              | Demo Account
+

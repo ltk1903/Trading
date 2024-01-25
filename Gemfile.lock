@@ -6,17 +6,6 @@ GIT
       awesome_print
       rails (>= 3.2)
 
-GIT
-  remote: https://github.com/sferik/rails_admin.git
-  revision: 5a958e46e8620fba320e04347d326d058c07d396
-  specs:
-    rails_admin (3.1.2)
-      activemodel-serializers-xml (>= 1.0)
-      kaminari (>= 0.14, < 2.0)
-      nested_form (~> 0.3)
-      rails (>= 6.0, < 8)
-      turbo-rails (~> 1.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -70,10 +59,6 @@ GEM
       globalid (>= 0.3.6)
     activemodel (7.0.4.3)
       activesupport (= 7.0.4.3)
-    activemodel-serializers-xml (1.0.2)
-      activemodel (> 5.x)
-      activesupport (> 5.x)
-      builder (~> 3.1)
     activerecord (7.0.4.3)
       activemodel (= 7.0.4.3)
       activesupport (= 7.0.4.3)
@@ -151,6 +136,10 @@ GEM
     commonjs (0.2.7)
     concurrent-ruby (1.2.2)
     connection_pool (2.4.1)
+    countries (5.1.1)
+      sixarm_ruby_unaccent (~> 1.1)
+    country_select (8.0.0)
+      countries (~> 5.0)
     crass (1.0.6)
     creek (2.6.3)
       nokogiri (>= 1.10.0)
@@ -351,8 +340,6 @@ GEM
     rails_12factor (0.0.3)
       rails_serve_static_assets
       rails_stdout_logging
-    rails_admin_rollincode (1.4)
-      rails (>= 4.0, < 8)
     rails_serve_static_assets (0.0.5)
     rails_stdout_logging (0.0.5)
     railties (7.0.4.3)
@@ -430,6 +417,7 @@ GEM
     simple_form (5.2.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
+    sixarm_ruby_unaccent (1.2.0)
     slim (5.1.1)
       temple (~> 0.10.0)
       tilt (>= 2.1.0)
@@ -503,6 +491,7 @@ DEPENDENCIES
   carrierwave-base64
   ckeditor
   combine_pdf
+  country_select (~> 8.0)
   creek
   cssbundling-rails
   debug
@@ -540,8 +529,6 @@ DEPENDENCIES
   rails (~> 7.0.3, >= 7.0.3.1)
   rails-erd (~> 1.6, >= 1.6.1)
   rails_12factor
-  rails_admin!
-  rails_admin_rollincode (~> 1.0)
   ransack
   redis (~> 4.0)
   responders

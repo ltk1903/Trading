@@ -1,0 +1,124 @@
+.user-profile-page
+  h1.page-title Thông tin tài khoản
+  .page-content.mt-4
+    .card.card-body-white-content
+      .card-body
+        .row.mt-2
+          .col-md-4.col-xl-4
+            = image_tag('statis/avatar_men_01.png')
+          .col-md-8.col-xl-8
+            .personal-title = @user_profile.user_name
+            .sub-personal-title.profile--user_alias = @user_profile.user_alias
+            .profile--description = @user_profile.description
+
+            .row.mt-2
+              .col-md-6.col-xl-6
+                span.font-weight-bold = t('model.user.email')
+                span =<> @user_profile.user_email
+              .col-md-6.col-xl-6
+                span.font-weight-bold = t('model.user.gender')
+                span =<> @user_profile.gender
+                
+
+            .row.mt-2
+              .col-md-6.col-xl-6
+                span.font-weight-bold = t('model.user.phone')
+                span =<> @user_profile.user_phone
+              .col-md-6.col-xl-6
+                span.font-weight-bold Birthday
+                span =<> @user_profile.dob
+
+
+
+            .row.mt-2
+              .col-md-6.col-xl-6
+                
+
+                span.font-weight-bold = t('model.user.created_at')
+                span =<> @user_profile.created_at
+              .col-md-6.col-xl-6
+                span.font-weight-bold = t('model.user.country')
+                span =<> @user_profile.country
+
+            .row.mt-2
+              .col-md-6.col-xl-6
+                span.font-weight-bold = t('model.user.id')
+                span =<> @user_profile.user_id
+              .col-md-6.col-xl-6
+                span.font-weight-bold = t('model.user.address')
+                span =<> @user_profile.address
+
+            
+
+            / .row.mt-2
+            /   .col-md-6.col-xl-6
+            /     span.font-weight-bold Point
+            /     span =<> @user_profile.user_point.to_i
+                
+            /   .col-md-6.col-xl-6
+            /     span.font-weight-bold Point
+            /     span =<> @user_profile.user_point.to_i
+            / .row.mt-2
+            /   .col-md-6.col-xl-6
+            /     span.font-weight-bold Phone
+            /     span =<> @user_profile.user_phone
+            /   .col-md-6.col-xl-6
+            /     span.font-weight-bold Point
+                span =<> @user_profile.user_point.to_i
+
+
+
+.user-profile-page
+  h1.page-title Thông tin tài khoản
+  .page-content.mt-4
+    .card.card-body-white-content
+      .card-title
+      .card-body
+        .sub-title-with-border Thông tin tài khoản
+        .row.mt-2
+          .col-md-4.col-xl-4
+            = I18n.t('model.user.name')
+          .col-md-8.col-xl-8
+            = @user_profile.user_name
+
+        .row.mt-2
+          .col-md-4.col-xl-4
+            = I18n.t('model.user.alias')
+          .col-md-8.col-xl-8
+            = @user_profile.user_alias
+        .row.mt-2
+          .col-md-4.col-xl-4
+            = I18n.t('model.user.email')
+          .col-md-8.col-xl-8
+            = @user_profile.user_email
+        .row.mt-2
+          .col-md-4.col-xl-4
+            = I18n.t('model.user.phone')
+          .col-md-8.col-xl-8
+            = @user_profile.user_phone
+
+        .row.mt-2
+          .col-md-4.col-xl-4
+            = I18n.t('model.user.address')
+          .col-md-8.col-xl-8
+            = @user_profile.address
+
+        .sub-title-with-border.mt-4 Referral 
+        .row.mt-4
+          .col-md-4.col-xl-4
+            | Mã giới thiệu
+          .col-md-8.col-xl-8
+            | 23456789
+
+
+
+        / p style="color: green" = notice
+
+        / == render @user_profile
+
+        / div
+        /   => link_to "Edit this user profile", edit_user_profile_path(@user_profile)
+        /   '|
+        /   =< link_to "Back to user profiles", user_profiles_path
+
+        /   = button_to "Destroy this user profile", @user_profile, method: :delete

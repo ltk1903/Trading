@@ -1,0 +1,41 @@
+@import url('http://fonts.cdnfonts.com/css/roboto');
+
+$fontFamily: 'Roboto Thin', sans-serif;
+$fontSize11: 11px;
+$fontSize12: 12px;
+$fontSize13: 13px;
+$fontSize:   14px;
+$fontSize16: 16px;
+$fontSize20: 20px;
+
+// Colors
+$borderColor: #cccccc;
+$backgroundColorDark: #F5F5F5;
+$textDark: #333333;
+$textPrimary: #8EBBDF;
+$groupColor: #87CEEB;
+$backgroundColor: #f4f4f4;
+$backgroundColorLight: #f9f9f9;
+$backgroundTitleTable: #E8F0FE;
+
+$colorBlack: #292B33;
+$colorMidNight: #45586c;
+$colorWhite: #ffffff;
+$colorRed: #d13c40;
+$colorBlue: #0f4C81;
+$colorGreen: #00C4B5;
+$colorGray: #b3b3b3;
+$colorLightDark: #d9d9d9;
+
+
+// Others
+$maxWidth: 1170px;
+$headerHeight: 56px;
+$footerHeight: 50px;
+
+$heightSearchFooterDesktop: 70px;
+$heightSearchFooterMobile: 104px;
+$heightSearchHeader: 60px;
+
+$hoverOpacity: 0.85;
+$borderStyle: 1px solid $borderColor;

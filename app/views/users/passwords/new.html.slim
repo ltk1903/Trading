@@ -1,0 +1,18 @@
+.container
+  .card
+    .card-body
+      .row
+        .col-md-5.mx-auto
+          .logo.mb-3
+            .col-md-12.text-center
+              h1 Forgot your password?
+          .reset-password-form.form
+            = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+              .form-group
+                = f.input :email,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" }
+
+              .form-group.text-center.mt-4
+                = f.button :submit, "Send me reset password instructions", class: 'btn  btn-primary'

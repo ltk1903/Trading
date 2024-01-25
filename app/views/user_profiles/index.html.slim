@@ -1,0 +1,11 @@
+p style="color: green" = notice
+
+h1 User profiles
+
+#user_profiles
+  - @user_profiles.each do |user_profile|
+    == render user_profile
+    p
+      = link_to "Show this user profile", user_profile
+
+= link_to "New user profile", new_user_profile_path

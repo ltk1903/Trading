@@ -1,0 +1,41 @@
+.container
+  .card
+    .card-body
+      .row
+        .col-md-5.mx-auto
+          
+          .myform.form
+            .logo.mb-3
+              .col-md-12.text-center
+                h1 Signup
+            = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+              .form-group
+                = f.input :name,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "name" }
+              .form-group
+                = f.input :phone,
+                  required: true,
+                  input_html: { autocomplete: "phone" }
+              .form-group
+                = f.input :email,
+                  required: true,
+                  input_html: { autocomplete: "email" }
+              .form-group
+                = f.input :password,
+                  required: true,
+                  input_html: { minlength: 6 },
+                  input_html: { autocomplete: "new-password" }
+              .form-group
+                = f.input :password_confirmation,
+                  required: true,
+                  input_html: { autocomplete: "new-password" } 
+              .form-group.col-md-12.text-center.mb-3
+                = f.button :submit, "Sign up", class: 'btn btn-primary'
+              .col-md-12
+                .form-group
+                  p.text-center
+                    span Already have an account?
+                    =<> link_to "Log in", new_session_path(resource_name)
+

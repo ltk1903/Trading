@@ -1,0 +1,20 @@
+en:
+  model:
+    user:
+      id: 'Personal code'
+      name: 'Name'
+      alias: 'Nick name'
+      email: 'Email'
+      phone: 'Phone'
+      password: 'Password'
+      point: 'Point'
+      referral_code: 'Referral code'
+      country: 'Country'
+      address: 'Address'
+      avatar: 'Avatar'
+      country: 'Country'
+      gender: 'Gender'
+      level: 'Level'
+      selfie: 'Selfie'
+      created_at: 'Register at'
+

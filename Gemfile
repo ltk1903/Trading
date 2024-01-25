@@ -103,6 +103,7 @@ gem 'sassc-rails'
 
 # Controller helpers
 gem 'responders'
+gem 'country_select', '~> 8.0'
 
 # Model helpers
 gem 'enumerize'

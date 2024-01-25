@@ -1,0 +1,29 @@
+@import 'abstract/_variables';
+@import "font-awesome";
+
+
+
+h1.page-title {
+  font-size: 28px;
+  font-weight: bold;
+}
+.sub-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.sub-title-with-border {
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: solid 1px;
+  border-color: $borderColor;
+}
+.card-body hr {
+  border-color: $borderColor;
+}
+
+.card.card-body-white-content {
+  // background-color: $backgroundColorDark;
+  // color: $textDark;
+}
