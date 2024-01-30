@@ -37,3 +37,6 @@ en:
       dob: 'Birthday'
       language: 'Language'
 
+    trade:
+      symbol: 'Symbol'
+

@@ -1,4 +1,8 @@
 vi:
   title: "Tiêu đề"
+  nav:
+    trade: 'Lệnh giao dịch'
+    new_trade: 'Thêm mới lệnh giao dịch'
+    edit_trade: 'Cập nhật lệnh giao dịch'
   button:
     create_new_trade: 'Thêm lệnh giao dịch'

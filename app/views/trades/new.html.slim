@@ -1,8 +1,9 @@
-h1 New trade
+.new-trade-page
+  h1.page-title = t('nav.new_trade')
+  .trade-content
+    == render "form", trade: @trade
 
-== render "form", trade: @trade
 
-br
 
-div
-  = link_to "Back to trades", trades_path
+
+/ = link_to "Back to trades", trades_path

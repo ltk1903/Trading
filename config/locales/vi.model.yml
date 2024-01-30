@@ -36,3 +36,6 @@ vi:
       description: 'Mô tả'
       dob: 'Ngày sinh'
       language: 'Ngôn ngữ'
+
+    trade:
+      symbol: 'Symbol'

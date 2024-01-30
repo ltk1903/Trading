@@ -27,3 +27,16 @@ h1.page-title {
   background-color: $backgroundColorDark;
   color: $textDark;
 }
+
+.layout-grid-view__right-320 {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+
+  .layout-grid-view__left-side {
+    // Todo:...
+  }
+
+  .layout_grid-view__right-side {
+    margin-left: 28px;
+  }
+}
