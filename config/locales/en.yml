@@ -31,7 +31,7 @@
 
 en:
   hello: "Hello world"
-  date:
+  time:
     abbr_day_names:
       - Sun
       - Mon

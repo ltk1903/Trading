@@ -1,4 +1,19 @@
 vi:
+  enums:
+    user_profile:
+      level:
+        normal: 'Thường'
+        vip1: 'Pro'
+        vip2: 'Pro+'
+      language:
+        vn: 'Tiếng Việt'
+        en: 'English'
+      gender:
+        mr: 'Mr'
+        mrs: 'Mrs'
+        ms: 'Ms'
+        miss: 'Miss'
+
   model:
     user:
       id: 'Mã định danh'
@@ -14,6 +29,10 @@ vi:
       avatar: 'Hình đại điện'
       country: 'Quốc gia'
       gender: 'Giới tính'
-      level: 'Bậc'
+      level: 'Tài khoản'
       selfie: 'Hình ảnh'
       created_at: 'Khởi tạo'
+    user_profile:
+      description: 'Mô tả'
+      dob: 'Ngày sinh'
+      language: 'Ngôn ngữ'

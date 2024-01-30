@@ -1,6 +1,6 @@
 vi:
   hello: "xin chào"
-  date:
+  time:
     abbr_day_names:
       - CN
       - Thứ 2

@@ -20,6 +20,7 @@
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
 #  sign_in_count          :integer          default(0), not null
+#  status                 :integer
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #
@@ -36,6 +37,7 @@ class User < ApplicationRecord
 
   include UserReferenceTypeEnum
   include UserRegistrationTypeEnum
+  include UserStatusEnum
 
   before_create :user_id_generate
   after_create :create_user_profile
@@ -49,7 +51,9 @@ class User < ApplicationRecord
     user_profile
   end
 
-
+  def men?
+    user_profile.gender_mr?
+  end
 
   def profile_id
     return if user_profile.nil?

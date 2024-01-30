@@ -1,2 +1,4 @@
 vi:
   title: "Tiêu đề"
+  button:
+    create_new_trade: 'Thêm lệnh giao dịch'

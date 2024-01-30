@@ -1,4 +1,19 @@
 en:
+  enums:
+    user_profile:
+      level:
+        notmal: 'Normal'
+        vip1: 'Pro'
+        vip2: 'Pro+'
+      language:
+        vn: 'Tếng Việt'
+        en: 'English'
+      gender:
+        mr: 'Mr'
+        mrs: 'Mrs'
+        ms: 'Ms'
+        miss: 'Miss'
+
   model:
     user:
       id: 'Personal code'
@@ -17,4 +32,8 @@ en:
       level: 'Level'
       selfie: 'Selfie'
       created_at: 'Register at'
+    user_profile:
+      description: 'Description'
+      dob: 'Birthday'
+      language: 'Language'
 

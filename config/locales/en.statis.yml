@@ -1,2 +1,4 @@
 en:
   title: "Title"
+  button:
+    create_new_trade: 'Create new trade'

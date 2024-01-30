@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_24_142134) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_27_103430) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -64,13 +64,14 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_24_142134) do
     t.integer "margin_type"
     t.integer "status"
     t.bigint "time_frame_id"
-    t.float "stoploss"
     t.decimal "take_profit"
     t.text "note"
     t.text "description"
     t.string "entry_photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "stoploss"
+    t.integer "result"
   end
 
   create_table "transactions", force: :cascade do |t|
@@ -108,6 +109,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_24_142134) do
     t.datetime "updated_at", null: false
     t.datetime "dob"
     t.text "description"
+    t.integer "language"
     t.index ["user_id"], name: "index_user_profiles_on_user_id"
   end
 
@@ -131,6 +133,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_24_142134) do
     t.integer "registration_by"
     t.integer "reference_type"
     t.integer "point"
+    t.integer "status"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

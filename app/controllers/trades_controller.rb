@@ -1,5 +1,6 @@
 class TradesController < ApplicationController
   before_action :set_trade, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /trades or /trades.json
   def index
