@@ -17,16 +17,19 @@
 #  symbol           :string
 #  take_profit      :decimal(, )
 #  target           :decimal(, )
+#  time_frame       :integer
 #  transaction_type :integer
 #  volume_amount    :decimal(, )
 #  volume_size      :decimal(, )
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
-#  time_frame_id    :bigint
 #  user_id          :bigint
 #
 class Trade < ApplicationRecord
   include TradeStatusEnum
   include TradeResultEnum
+  include TradeTransactionTypeEnum
+  include TradeMarginTypeEnum
+  include TradeTimeFrameEnum
 
 end

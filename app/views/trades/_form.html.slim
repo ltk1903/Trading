@@ -3,11 +3,44 @@
     .layout-grid-view__left-side
       .card
         .card-body
-          p left side content
+          p Market info 
     .layout_grid-view__right-side
       .card
         .card-body
-          p right side content
+          p Trade info
+
+          .row
+            .col-sm-12
+              = f.input :transaction_type
+          .row
+            .col-sm-12
+              = f.input :time_frame
+          .row
+            .col-sm-12
+              = f.input :margin_type
+
+          .row
+            .col-sm-12
+              = f.input :symbol
+          .row
+            .col-sm-12
+              = f.input :entry_price
+          .row
+            .col-sm-12
+              = f.input :stoploss
+          .row
+            .col-sm-12
+              = f.input :volume_amount
+          .row
+            .col-sm-12
+              = f.input :volume_size
+          .row
+            .col-sm-12
+              = f.input :margin_amount
+          
+          .row
+            .col-sm-12
+              = f.input :take_profit
 
 
 

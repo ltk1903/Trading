@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   resources :holds
   resources :trades
   resources :stoploss_frames
-  resources :time_frames
 
   # Defines the root path route ("/")
   root "home#dashboard"

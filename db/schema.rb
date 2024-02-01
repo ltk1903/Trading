@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_27_103430) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_01_020359) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,14 +42,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_27_103430) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "time_frames", force: :cascade do |t|
-    t.string "name"
-    t.string "time_code"
-    t.string "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "trades", force: :cascade do |t|
     t.bigint "user_id"
     t.string "symbol"
@@ -63,7 +55,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_27_103430) do
     t.decimal "margin_amount"
     t.integer "margin_type"
     t.integer "status"
-    t.bigint "time_frame_id"
     t.decimal "take_profit"
     t.text "note"
     t.text "description"
@@ -72,6 +63,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_27_103430) do
     t.datetime "updated_at", null: false
     t.decimal "stoploss"
     t.integer "result"
+    t.integer "time_frame"
   end
 
   create_table "transactions", force: :cascade do |t|
