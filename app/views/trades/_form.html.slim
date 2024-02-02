@@ -3,44 +3,69 @@
     .layout-grid-view__left-side
       .card
         .card-body
-          p Market info 
+          .d-flex.flex-row.justify-content-between
+            h4.sub-title-with-border
+              = t('label.market_info')
+
+          .row
+            .col-sm-12
+              label = t('model.trade.description')
+              / = f.input :description, label: false
+              = f.cktext_area :description, :as => :ckeditor
     .layout_grid-view__right-side
       .card
         .card-body
-          p Trade info
+          .d-flex.flex-row.justify-content-between
+            h4.sub-title-with-border
+              = t('label.trade_info')
+          .row
+            .col-sm-6
+              label = t('model.trade.transaction_type')
+            .col-sm-6.text-right
+              = f.input :transaction_type, label: false, input_html: { class: 'select-full-size text-center' }
+          .row
+            .col-sm-6
+              label = t('model.trade.time_frame')
+            .col-sm-6.text-right
+              = f.input :time_frame, label: false, input_html: { class: 'select-full-size text-center' }
+          .row
+            .col-sm-6
+              label = t('model.trade.margin_type')
+            .col-sm-6.text-right
+              = f.input :margin_type, label: false, input_html: { class: 'select-full-size text-center' }
 
           .row
             .col-sm-12
-              = f.input :transaction_type
+              label = t('model.trade.symbol')
+              = f.input :symbol, label: false
           .row
             .col-sm-12
-              = f.input :time_frame
+              label = t('model.trade.entry_price')
+              = f.input :entry_price, label: false
           .row
             .col-sm-12
-              = f.input :margin_type
-
+              label = t('model.trade.stoploss_price')
+              = f.input :stoploss_price, label: false
+          .row
+            .col-sm-6
+              label = t('model.trade.stoloss_percentage')
+            .col-sm-6.text-right
+              span.text-danger.text-bold Recommend 2%
           .row
             .col-sm-12
-              = f.input :symbol
+              = f.input :stoloss_percentage, label: false
           .row
             .col-sm-12
-              = f.input :entry_price
+              label = t('model.trade.volume_amount')
+              = f.input :volume_amount, label: false
           .row
             .col-sm-12
-              = f.input :stoploss
+              label = t('model.trade.volume_size')
+              = f.input :volume_size, label: false
           .row
             .col-sm-12
-              = f.input :volume_amount
-          .row
-            .col-sm-12
-              = f.input :volume_size
-          .row
-            .col-sm-12
-              = f.input :margin_amount
-          
-          .row
-            .col-sm-12
-              = f.input :take_profit
+              label = t('model.trade.target')
+              = f.input :target, label: false
 
 
 

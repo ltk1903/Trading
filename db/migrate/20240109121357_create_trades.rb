@@ -14,7 +14,6 @@ class CreateTrades < ActiveRecord::Migration[7.0]
       t.integer :margin_type
       t.integer :status
       t.integer :time_frame
-      t.float :stoploss
       t.decimal :take_profit
       t.text :note
       t.text :description

@@ -12,15 +12,18 @@ h1.page-title {
   font-weight: bold;
 }
 
-
 .sub-title-with-border {
   font-size: 20px;
   font-weight: bold;
   border-bottom: solid 1px;
   border-color: $borderColor;
+  padding-bottom: 8px;
+  width: 100%;
+  margin-bottom: 28px;
 }
 .card-body hr {
   border-color: $borderColor;
+
 }
 
 .card.card-body-white-content {
@@ -39,4 +42,10 @@ h1.page-title {
   .layout_grid-view__right-side {
     margin-left: 28px;
   }
+}
+
+
+.select-full-size{
+  width: 100%;
+  height: 34px;
 }

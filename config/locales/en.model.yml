@@ -38,5 +38,26 @@ en:
       language: 'Language'
 
     trade:
+      user_id: 'User'
       symbol: 'Symbol'
+      coin_name: 'Token'
+      transaction_type: 'Transaction type'
+      time_frame: 'Time frame'
+      margin_type: 'Margin'
+      entry_price: 'Entry'
+      stoploss_price: 'Stoploss price'
+      stoloss_percentage: 'Stoloss percentage'
+      stoploss_amount: 'Stoploss amount'
+      
+      target: 'Target profit'
+      take_profit: 'Take profit'
+      liquidation: 'Liquidation'
+      volume_amount: 'Amount'
+      volume_size: 'Size'
+      margin_amount: 'Margin amount'
+      note: 'Note'
+      description: 'Description'
+      status: 'Status'
+      result: 'Result'
+
 
