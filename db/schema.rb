@@ -10,9 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_02_231342) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_04_013023) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "ckeditor_assets", force: :cascade do |t|
+    t.string "data_file_name", null: false
+    t.string "data_content_type"
+    t.integer "data_file_size"
+    t.string "type", limit: 30
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
+    t.index ["type"], name: "index_ckeditor_assets_on_type"
+  end
+
+  create_table "criterion_translations", force: :cascade do |t|
+    t.bigint "criterion_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.string "content"
+    t.index ["criterion_id"], name: "index_criterion_translations_on_criterion_id"
+    t.index ["locale"], name: "index_criterion_translations_on_locale"
+  end
+
+  create_table "criterions", force: :cascade do |t|
+    t.integer "rank"
+    t.string "name"
+    t.integer "transaction_type"
+    t.integer "order_type"
+    t.integer "action_type"
+    t.boolean "is_required"
+    t.integer "defined_by"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "section"
+  end
 
   create_table "holds", force: :cascade do |t|
     t.bigint "user_id"
@@ -31,6 +66,30 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_02_231342) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "order_criteria", force: :cascade do |t|
+    t.integer "rank"
+    t.string "name"
+    t.integer "transaction_type"
+    t.integer "order_type"
+    t.integer "action_type"
+    t.boolean "is_required"
+    t.integer "defined_by"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "order_criterium_translations", force: :cascade do |t|
+    t.bigint "order_criterium_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.string "content"
+    t.index ["locale"], name: "index_order_criterium_translations_on_locale"
+    t.index ["order_criterium_id"], name: "index_order_criterium_translations_on_order_criterium_id"
+  end
+
   create_table "stoploss_frames", force: :cascade do |t|
     t.string "name"
     t.float "percentage_number"
@@ -40,6 +99,25 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_02_231342) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "trade_criterions", force: :cascade do |t|
+    t.bigint "trade_id"
+    t.bigint "criterion_id"
+    t.boolean "passed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "trade_criterium_translations", force: :cascade do |t|
+    t.bigint "trade_criterium_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title"
+    t.string "content"
+    t.index ["locale"], name: "index_trade_criterium_translations_on_locale"
+    t.index ["trade_criterium_id"], name: "index_trade_criterium_translations_on_trade_criterium_id"
   end
 
   create_table "trades", force: :cascade do |t|

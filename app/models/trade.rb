@@ -34,4 +34,9 @@ class Trade < ApplicationRecord
   include TradeMarginTypeEnum
   include TradeTimeFrameEnum
 
+  has_many :trade_criterions
+
+
+  accepts_nested_attributes_for :trade_criterions, reject_if: :all_blank, allow_destroy: true
+
 end

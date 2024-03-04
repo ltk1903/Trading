@@ -39,8 +39,8 @@ vi:
 
     trade:
       user_id: 'Người dùng'
-      symbol: 'Symbol'
-      coin_name: 'Token'
+      symbol: 'Tên đồng token'
+      coin_name: 'Cặp giao dịch'
       transaction_type: 'Loại giao dịch'
       time_frame: 'Khung thời gian'
       margin_type: 'Đòn bẩy'
@@ -55,6 +55,6 @@ vi:
       volume_size: 'Số lượng'
       margin_amount: 'Khối lượng đòn bẩy'
       note: 'Ghi chú'
-      description: 'Mô tả'
+      description: 'Nhận định thị trường'
       status: 'Trạng thái'
       result: 'Kết quả'

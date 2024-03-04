@@ -14,6 +14,15 @@ class TradesController < ApplicationController
   # GET /trades/new
   def new
     @trade = Trade.new
+
+
+    @criterions = Criterion.default_spot.order(section: 'ASC')
+    @criterions.each do |criterion|
+      @trade.trade_criterions.build(criterion_id: criterion.id, passed: false)
+    end
+    # @criterions = Criterion.default_margin if params[:transaction_type] == TradeTransactionTypeEnum::TRADE_TRANSACTION_TYPE_MARGIN
+    # @criterions = Criterion.default_future if params[:transaction_type] == TradeTransactionTypeEnum::TRADE_TRANSACTION_TYPE_FUTURE
+
   end
 
   # GET /trades/1/edit

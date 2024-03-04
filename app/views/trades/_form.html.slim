@@ -8,9 +8,28 @@
               = t('label.market_info')
 
           .row
+            .col-sm-6
+              label = t('model.trade.symbol')
+              = f.input :symbol, label: false
+            .col-sm-6
+              label = t('model.trade.coin_name')
+              = f.input :coin_name, label: false
+
+          .row
+            .col-sm-12
+              label = 'Tiêu chí vào lệnh'
+
+          - if @criterions.present?
+            .row.trade_criterions--form_entry
+              = f.fields_for :trade_criterions do |ff|
+                / - @criterions.each do |criterion|
+                .col-sm-6.mb-0
+                  - text_color = criterion_section_color(ff.object.criterion_section)
+                  - text_label = ff.object.criterion_is_required ? "[*] #{ff.object.criterion_title}" : ff.object.criterion_title
+                  = ff.input :passed, label: text_label , label_html: { class: "#{text_color}" }
+          .row
             .col-sm-12
               label = t('model.trade.description')
-              / = f.input :description, label: false
               = f.cktext_area :description, :as => :ckeditor
     .layout_grid-view__right-side
       .card
@@ -33,11 +52,6 @@
               label = t('model.trade.margin_type')
             .col-sm-6.text-right
               = f.input :margin_type, label: false, input_html: { class: 'select-full-size text-center' }
-
-          .row
-            .col-sm-12
-              label = t('model.trade.symbol')
-              = f.input :symbol, label: false
           .row
             .col-sm-12
               label = t('model.trade.entry_price')
@@ -66,6 +80,10 @@
             .col-sm-12
               label = t('model.trade.target')
               = f.input :target, label: false
+
+          .row
+            .col-sm-12.text-right
+              = f.button :submit, class: 'btn btn-primary'
 
 
 

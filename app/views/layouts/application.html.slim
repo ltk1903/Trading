@@ -8,6 +8,7 @@ html
     = csp_meta_tag
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_include_tag "application"
+    = javascript_include_tag Ckeditor.cdn_url
   body
     .container-scroller
       nav#sidebar.sidebar.sidebar-offcanvas
