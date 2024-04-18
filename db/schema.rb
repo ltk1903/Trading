@@ -10,9 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_04_013023) do
+ActiveRecord::Schema[7.0].define(version: 2024_03_07_011642) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attachments", force: :cascade do |t|
+    t.bigint "relatable_id"
+    t.string "relatable_type"
+    t.string "name"
+    t.string "resource_url"
+    t.integer "resource_type"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["relatable_type", "relatable_id"], name: "index_attachments_on_relatable_type_and_relatable_id"
+  end
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string "data_file_name", null: false
@@ -144,6 +156,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_04_013023) do
     t.decimal "stoploss_price"
     t.float "stoloss_percentage"
     t.decimal "stoploss_amount"
+    t.string "currency"
   end
 
   create_table "transactions", force: :cascade do |t|

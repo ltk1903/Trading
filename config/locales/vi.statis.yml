@@ -5,8 +5,10 @@ vi:
     trade_info: 'Thông tin lệnh giao dịch' 
   nav:
     trade: 'Lệnh giao dịch'
-    new_trade: 'Thêm mới lệnh giao dịch'
+    new_trade: 'Thêm lệnh giao dịch'
     edit_trade: 'Cập nhật lệnh giao dịch'
   # link:
   button:
-    create_new_trade: 'Thêm lệnh giao dịch'
+    trade:
+      create_new_trade: 'Thêm lệnh giao dịch'
+      edit_trade: 'Cập nhật lệnh giao dịch'

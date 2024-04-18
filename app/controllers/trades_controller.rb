@@ -16,6 +16,8 @@ class TradesController < ApplicationController
     @trade = Trade.new
 
 
+    # @trade.attachments.build(criterion_id: criterion.id, passed: false)
+    @trade.attachments.build
     @criterions = Criterion.default_spot.order(section: 'ASC')
     @criterions.each do |criterion|
       @trade.trade_criterions.build(criterion_id: criterion.id, passed: false)
@@ -75,6 +77,26 @@ class TradesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def trade_params
-      params.require(:trade).permit(:user_id, :symbol, :coin_name, :target, :transaction_type, :volume_size, :volume_amount, :entry_price, :liquidation, :margin_amount, :margin_type, :status, :time_frame_id, :stoploss, :take_profit, :note, :description, :entry_photo)
+      params.require(:trade).permit(
+        :user_id,
+        :currency,
+        :symbol,
+        :coin_name,
+        :target,
+        :transaction_type,
+        :volume_size,
+        :volume_amount,
+        :entry_price,
+        :liquidation,
+        :margin_amount,
+        :margin_type,
+        :status,
+        :time_frame_id,
+        :stoploss,
+        :take_profit,
+        :note,
+        :description,
+        :entry_photo
+      )
     end
 end

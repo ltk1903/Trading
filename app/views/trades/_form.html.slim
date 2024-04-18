@@ -5,32 +5,56 @@
         .card-body
           .d-flex.flex-row.justify-content-between
             h4.sub-title-with-border
-              = t('label.market_info')
-
+              = 'Cặp giao dịch'
           .row
-            .col-sm-6
+            .col-sm-3
+              label = t('model.trade.currency')
+              = f.input :currency, label: false, input_html: { value: 'USDT'}
+            .col-sm-3
               label = t('model.trade.symbol')
               = f.input :symbol, label: false
             .col-sm-6
               label = t('model.trade.coin_name')
               = f.input :coin_name, label: false
 
+      .card.mt-4
+        .card-body
+          .d-flex.flex-row.justify-content-between
+            h4.sub-title-with-border = t('label.market_info')
+
+            p = "(sửa nội dung gôm các section vào 1 checkbox --> thoả các tiêu chí)"
+            p = "add params.require trade controller"
           .row
             .col-sm-12
-              label = 'Tiêu chí vào lệnh'
+              label Tiêu chí vào lệnh
+              - if @criterions.present?
+                = f.fields_for :trade_criterions do |fc|
+                  .row.trade_criterions--form_entry
+                    .col-sm-12.mb-0
+                      - text_color = criterion_section_color(fc.object.criterion_section)
+                      - text_section = "<span class='#{text_color}'> [#{fc.object.criterion_section}]</span>  #{fc.object.criterion_title}"
+                      - text_label = fc.object.criterion_is_required ? text_section + "<span class='text-danger' >(*)</span>" : text_section
+                      = fc.input :passed, label: text_label.html_safe , label_html: { class: "text-white" }
 
-          - if @criterions.present?
-            .row.trade_criterions--form_entry
-              = f.fields_for :trade_criterions do |ff|
-                / - @criterions.each do |criterion|
-                .col-sm-6.mb-0
-                  - text_color = criterion_section_color(ff.object.criterion_section)
-                  - text_label = ff.object.criterion_is_required ? "[*] #{ff.object.criterion_title}" : ff.object.criterion_title
-                  = ff.input :passed, label: text_label , label_html: { class: "#{text_color}" }
+
           .row
             .col-sm-12
               label = t('model.trade.description')
               = f.cktext_area :description, :as => :ckeditor
+
+      .card.mt-4
+        .card-body
+          .d-flex.flex-row.justify-content-between
+            h4.sub-title-with-border Attachement Photo
+          = f.fields_for :attachments do |fa|
+            .row
+              .col-sm-8
+                = fa.input :name
+              .col-sm-4
+                = fa.input :resource_url, as: :file, label: 'Select file'
+            = fa.input :description, as: :text
+
+
     .layout_grid-view__right-side
       .card
         .card-body
@@ -67,7 +91,7 @@
               span.text-danger.text-bold Recommend 2%
           .row
             .col-sm-12
-              = f.input :stoloss_percentage, label: false
+              = f.input :stoloss_percentage, label: false, id: 'trade_stoloss_percentage'
           .row
             .col-sm-12
               label = t('model.trade.volume_amount')
@@ -83,7 +107,7 @@
 
           .row
             .col-sm-12.text-right
-              = f.button :submit, class: 'btn btn-primary'
+              = f.button :submit, class: 'btn btn-primary', value: t('button.trade.create_new_trade')
 
 
 

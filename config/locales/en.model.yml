@@ -39,8 +39,9 @@ en:
 
     trade:
       user_id: 'User'
-      symbol: 'Symbol name'
-      coin_name: 'Trading pair'
+      symbol: 'Symbol'
+      coin_name: 'Coin name'
+      trading_pair: 'Trading pair'
       transaction_type: 'Transaction type'
       time_frame: 'Time frame'
       margin_type: 'Margin'
@@ -59,5 +60,6 @@ en:
       description: 'Market analytics'
       status: 'Status'
       result: 'Result'
+      currency: 'Currency'
 
 

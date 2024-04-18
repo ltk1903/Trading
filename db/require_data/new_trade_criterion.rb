@@ -306,7 +306,7 @@ unless Criterion.exists?
       action_type: :create_new,
       order_type: :trading,
       is_required: false,
-      section: :market_info,
+      section: :market,
       translations_attributes: [
         {
           title: 'Giá đang ở vùng tích luỹ',
@@ -327,7 +327,7 @@ unless Criterion.exists?
       action_type: :create_new,
       is_required: false,
       order_type: :trading,
-      section: :market_info,
+      section: :market,
       translations_attributes: [
         {
           title: 'Giá đang ở vùng tăng trưởng',

@@ -39,8 +39,9 @@ vi:
 
     trade:
       user_id: 'Người dùng'
-      symbol: 'Tên đồng token'
-      coin_name: 'Cặp giao dịch'
+      symbol: 'Mã token'
+      coin_name: 'Tên token'
+      trading_pair: 'Cặp giao dịch'
       transaction_type: 'Loại giao dịch'
       time_frame: 'Khung thời gian'
       margin_type: 'Đòn bẩy'
@@ -58,3 +59,4 @@ vi:
       description: 'Nhận định thị trường'
       status: 'Trạng thái'
       result: 'Kết quả'
+      currency: 'Tiền tệ'

@@ -1,10 +1,16 @@
-p style="color: green" = notice
+.new-trade-page
+  h1.page-title = @trade.coin_name
+  .trade-content
+    == render "form", trade: @trade
 
-== render @trade
 
-div
-  => link_to "Edit this trade", edit_trade_path(@trade)
-  '|
-  =< link_to "Back to trades", trades_path
+/ p style="color: green" = notice
 
-  = button_to "Destroy this trade", @trade, method: :delete
+/ == render @trade
+
+/ div
+/   => link_to "Edit this trade", edit_trade_path(@trade)
+/   '|
+/   =< link_to "Back to trades", trades_path
+
+/   = button_to "Destroy this trade", @trade, method: :delete

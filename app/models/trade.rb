@@ -4,6 +4,7 @@
 #
 #  id                 :bigint           not null, primary key
 #  coin_name          :string
+#  currency           :string
 #  description        :text
 #  entry_photo        :string
 #  entry_price        :decimal(, )
@@ -35,8 +36,10 @@ class Trade < ApplicationRecord
   include TradeTimeFrameEnum
 
   has_many :trade_criterions
+  has_many :attachments, as: :relatable, dependent: :destroy
 
 
   accepts_nested_attributes_for :trade_criterions, reject_if: :all_blank, allow_destroy: true
+  accepts_nested_attributes_for :attachments, reject_if: :all_blank, allow_destroy: true
 
 end

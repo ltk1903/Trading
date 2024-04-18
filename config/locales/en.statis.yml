@@ -10,4 +10,6 @@ en:
   
   # link:
   button:
-    create_new_trade: 'Create new trade'
+    trade:
+      create_new_trade: 'Create new trade'
+      edit_trade: 'Edit trade'
