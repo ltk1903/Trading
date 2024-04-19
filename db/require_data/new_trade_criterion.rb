@@ -149,12 +149,12 @@ unless Criterion.exists?
       section: :mental,
       translations_attributes: [
         {
-          title: 'Tâm trạng lúc vào lệnh không quá hưng phấn hoặc vừa TP hay SL',
+          title: 'Tâm trạng lúc vào lệnh không hưng phấn hoặc vừa TP/SL',
           content: 'Phải để tâm trạng ở trạng thái rất bình tĩnh mới được vào lệnh',
           locale: :vi,
         },
         {
-          title: 'Tâm trạng lúc vào lệnh không quá hưng phấn hoặc vừa TP hay SL',
+          title: 'Tâm trạng lúc vào lệnh không hưng phấn hoặc vừa TP/SL',
           content: 'Phải để tâm trạng ở trạng thái rất bình tĩnh mới được vào lệnh',
           locale: :en,
         }
@@ -209,12 +209,12 @@ unless Criterion.exists?
       section: :mental,
       translations_attributes: [
         {
-          title: 'Không vượt quá 3 lệnh Future và 5 lệnh Spot trong cùng thời điểm',
+          title: 'Không vượt quá 3 lệnh Future và 5 lệnh Spot',
           content: 'Để kiểm soát và quản lý lệnh giao dịch tốt thì không nên vào quá nhiều lệnh trong cùng thời điểm',
           locale: :vi,
         },
         {
-          title: 'Không vượt quá 3 lệnh Future và 5 lệnh Spot trong cùng thời điểm',
+          title: 'Không vượt quá 3 lệnh Future và 5 lệnh Spot',
           content: 'Để kiểm soát và quản lý lệnh giao dịch tốt thì không nên vào quá nhiều lệnh trong cùng thời điểm',
           locale: :en,
         }
@@ -289,12 +289,12 @@ unless Criterion.exists?
       section: :entry,
       translations_attributes: [
         {
-          title: 'Giá không nằm dưới kháng cự mạnh ở các khung thời gian',
+          title: 'Giá không nằm dưới kháng cự mạnh',
           content: 'Xét đa khung thời gian, giá không bị cảng bởi một vùng kháng cự mạnh ở trên',
           locale: :vi,
         },
         {
-          title: 'Giá không nằm dưới kháng cự mạnh ở các khung thời gian',
+          title: 'Giá không nằm dưới kháng cự mạnh',
           content: 'Xét đa khung thời gian, giá không bị cảng bởi một vùng kháng cự mạnh ở trên',
           locale: :en,
         }

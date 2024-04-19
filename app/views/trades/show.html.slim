@@ -1,16 +1,4 @@
 .new-trade-page
-  h1.page-title = @trade.coin_name
+  h1.page-title = t('nav.trade')
   .trade-content
     == render "form", trade: @trade
-
-
-/ p style="color: green" = notice
-
-/ == render @trade
-
-/ div
-/   => link_to "Edit this trade", edit_trade_path(@trade)
-/   '|
-/   =< link_to "Back to trades", trades_path
-
-/   = button_to "Destroy this trade", @trade, method: :delete

@@ -1,5 +1,6 @@
 class TradesController < ApplicationController
   before_action :set_trade, only: %i[ show edit update destroy ]
+  before_action :load_resource, only: %i[ new show edit update ]
   before_action :authenticate_user!
 
   # GET /trades or /trades.json
@@ -13,12 +14,19 @@ class TradesController < ApplicationController
 
   # GET /trades/new
   def new
-    @trade = Trade.new
+    @trade = Trade.new(
+        transaction_type:     TradeTransactionTypeEnum::TRADE_TRANSACTION_TYPE_SPOT,
+        margin_type:          TradeMarginTypeEnum::TRADE_MARGIN_TYPE_X1,
+        time_frame:           TradeTimeFrameEnum::TRADE_TIME_FRAME_D1,
+        stoloss_percentage:   1.0,
+        symbol:               'BTC',
+        coin_name:            'Bitcon',
+      )
 
 
-    # @trade.attachments.build(criterion_id: criterion.id, passed: false)
     @trade.attachments.build
-    @criterions = Criterion.default_spot.order(section: 'ASC')
+    # @trade.attachments.build(criterion_id: criterion.id, passed: false)
+    # @criterions = Criterion.default_spot.order(section: 'ASC')
     @criterions.each do |criterion|
       @trade.trade_criterions.build(criterion_id: criterion.id, passed: false)
     end
@@ -29,12 +37,15 @@ class TradesController < ApplicationController
 
   # GET /trades/1/edit
   def edit
+    # @criterions = Criterion.default_spot.order(section: 'ASC')
   end
 
   # POST /trades or /trades.json
   def create
     @trade = Trade.new(trade_params)
 
+    byebug
+    # check params
     respond_to do |format|
       if @trade.save
         format.html { redirect_to trade_url(@trade), notice: "Trade was successfully created." }
@@ -75,28 +86,47 @@ class TradesController < ApplicationController
       @trade = Trade.find(params[:id])
     end
 
+    def load_resource
+      @criterions = Criterion.default_spot.order(section: 'ASC')
+    end
+
     # Only allow a list of trusted parameters through.
     def trade_params
       params.require(:trade).permit(
         :user_id,
-        :currency,
-        :symbol,
         :coin_name,
-        :target,
-        :transaction_type,
-        :volume_size,
-        :volume_amount,
+        :currency,
+        :description,
+        :entry_photo,
         :entry_price,
         :liquidation,
         :margin_amount,
         :margin_type,
-        :status,
-        :time_frame_id,
-        :stoploss,
-        :take_profit,
         :note,
-        :description,
-        :entry_photo
+        :result,
+        :status,
+        :stoloss_percentage,
+        :stoploss_amount,
+        :stoploss_price,
+        :symbol,
+        :take_profit,
+        :target,
+        :time_frame,
+        :transaction_type,
+        :volume_amount,
+        :volume_size,
+        attachments_attributes: attachments_attributes,
+        trade_criterions_attributes: trade_criterions_attributes
       )
     end
+
+    def attachments_attributes
+      %i[_destroy id description name relatable_type resource_type resource_url relatable_id]
+    end
+
+
+    def trade_criterions_attributes
+      %i[_destroy id passed criterion_id trade_id]
+    end
+
 end

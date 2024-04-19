@@ -112,6 +112,7 @@ GEM
       kaminari (>= 0.13)
       rails (>= 3.1)
     builder (3.2.4)
+    byebug (11.1.3)
     cancancan (3.5.0)
     capybara (3.39.1)
       addressable
@@ -507,6 +508,7 @@ DEPENDENCIES
   bootsnap
   bootstrap3-datetimepicker-rails
   bootstrap4-kaminari-views
+  byebug
   cancancan
   capybara
   carrierwave

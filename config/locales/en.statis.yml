@@ -12,4 +12,5 @@ en:
   button:
     trade:
       create_new_trade: 'Create new trade'
+      update_trade: 'Update trade'
       edit_trade: 'Edit trade'
