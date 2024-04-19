@@ -70,3 +70,7 @@ test/*
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
+
+*/spec/test_files/*
+*/spec/tmp/test_files/*
+*/spec/test/files/*

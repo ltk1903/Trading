@@ -2,7 +2,7 @@ if Rails.env.test? || ENV['AWS_SECRET_ACCESS_KEY'].nil?
   CarrierWave.configure do |config|
     config.storage = :file
     config.enable_processing = false
-    config.root = "#{Rails.root}/spec/test_files"
+    config.root = "#{Rails.root}/spec/test/files"
   end
 else
   CarrierWave.configure do |config|
