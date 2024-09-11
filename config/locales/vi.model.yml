@@ -1,0 +1,62 @@
+vi:
+  enums:
+    user_profile:
+      level:
+        normal: 'Thường'
+        vip1: 'Pro'
+        vip2: 'Pro+'
+      language:
+        vn: 'Tiếng Việt'
+        en: 'English'
+      gender:
+        mr: 'Mr'
+        mrs: 'Mrs'
+        ms: 'Ms'
+        miss: 'Miss'
+
+  model:
+    user:
+      id: 'Mã định danh'
+      name: 'Họ và tên'
+      alias: 'Bí danh'
+      email: 'Email'
+      phone: 'Điện thoại'
+      password: 'Mật khẩu'
+      point: 'Điểm'
+      referral_code: 'Mã giới thiệu'
+      country: 'Quốc gia'
+      address: 'Địa chỉ'
+      avatar: 'Hình đại điện'
+      country: 'Quốc gia'
+      gender: 'Giới tính'
+      level: 'Tài khoản'
+      selfie: 'Hình ảnh'
+      created_at: 'Khởi tạo'
+    user_profile:
+      description: 'Mô tả'
+      dob: 'Ngày sinh'
+      language: 'Ngôn ngữ'
+
+    trade:
+      user_id: 'Người dùng'
+      symbol: 'Mã token'
+      coin_name: 'Tên token'
+      trading_pair: 'Cặp giao dịch'
+      transaction_type: 'Loại giao dịch'
+      time_frame: 'Khung thời gian'
+      margin_type: 'Đòn bẩy'
+      entry_price: 'Giá vào lệnh'
+      stoploss_price: 'Giá cắt lỗ'
+      stoloss_percentage: 'Tỉ lệ % cắt lỗ'
+      stoploss_amount: 'Số tiền cắt lỗ'
+      target: 'Điểm chốt lời dự kiến'
+      take_profit: 'Chốt lời'
+      liquidation: 'Thanh lý'
+      volume_amount: 'Vốn vào lệnh'
+      volume_size: 'Số lượng'
+      margin_amount: 'Khối lượng đòn bẩy'
+      note: 'Ghi chú'
+      description: 'Nhận định thị trường'
+      status: 'Trạng thái'
+      result: 'Kết quả'
+      currency: 'Tiền tệ'

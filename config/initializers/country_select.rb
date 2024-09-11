@@ -1,0 +1,1 @@
+# CountrySelect::DEFAULTS[:except] = [ "VN" ]

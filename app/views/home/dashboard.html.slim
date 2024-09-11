@@ -1,7 +1,17 @@
 .content--dashboard
-  = render "home/shared/alert"
-  = render "home/shared/transaction"
-  = render "home/shared/revenue"
-  = render "home/shared/order"
-  = render "home/shared/message"
-  = render "home/shared/visitor"
+  = render "home/shared/banner"
+  = render "home/shared/future_trading"
+  .row
+    .col-md-4.grid-margin.stretch-card
+      = render "home/shared/trading_balance_chart"
+    .col-md-8.grid-margin.stretch-card
+      = render "home/shared/spot_trading"
+  .trading_balance
+    = render "home/shared/balance"
+  .holding-tracking
+    = render "home/shared/holding"
+  = render "home/shared/potential"
+  
+  / = render "home/shared/transaction"
+  / = render "home/shared/message"
+  / = render "home/shared/visitor"

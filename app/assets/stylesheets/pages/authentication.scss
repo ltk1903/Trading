@@ -1,0 +1,42 @@
+@import 'abstract/_variables';
+@import "font-awesome";
+
+.user-profile__content {
+  display: grid;
+  grid-template-columns: 320px 1fr ;
+}
+
+.user-profile__content-right {
+  margin-left: 20px;
+}
+
+
+.personal-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: $colorBlue;
+}
+
+.sub-personal-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: $colorRed;
+}
+
+.user-profile_avatar {
+  margin: auto;
+}
+
+.user-profile_avatar img{
+  width: 280px;
+  margin-top: 12px;
+  margin-left: 20px;
+}
+
+
+.trade_criterions--form_entry {
+  .form-check {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+}

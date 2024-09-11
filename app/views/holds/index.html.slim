@@ -1,0 +1,19 @@
+.holding-content
+  h1 Holding
+  .row
+    .col-md-4.col-xl-4.grid-margin.stretch-card
+      = render "holds/shared/porfolio_piechart"
+    .col-md-8.col-xl-8.grid-margin.stretch-card
+      = render "holds/shared/holding_barchart"
+  .row
+    .col-md-12.col-xl-12.grid-margin.stretch-card
+      = render "home/shared/holding_entry"
+  .row
+    .col-md-4
+      = render "home/shared/potential"
+    .col-md-8.col-xl-8.grid-margin.stretch-card
+      .card
+        .card-body
+          h4.card-title
+            | Following
+          p Danh sách các Altcoins đang theo dõi

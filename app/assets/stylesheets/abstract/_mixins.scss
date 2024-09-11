@@ -1,0 +1,242 @@
+@import '_variables';
+
+@mixin transform($value)  {
+  -webkit-transform: $value;
+      -ms-transform: $value;
+          transform: $value;
+}
+
+@mixin box-shadow($value...) {
+  -webkit-box-shadow: $value;
+     -moz-box-shadow: $value;
+          box-shadow: $value;
+}
+
+@mixin border-radius($value) {
+  -webkit-border-radius: $value;
+     -moz-border-radius: $value;
+          border-radius: $value;
+}
+
+@mixin vertical-align-child {
+  position: absolute;
+  top: 50%;
+  @include transform(translateY(-50%));
+}
+
+@mixin middle-align-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include transform(translateX(-50%) translateY(-50%));
+}
+
+@mixin vertical-align-container {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+
+  align-items: center;
+}
+
+@mixin respond-to($media) {
+  @if $media == mobile {
+    @media only screen and (max-width: 767px) { @content; }
+  }
+  @else if $media == tablet {
+    @media only screen and (min-width: 768px) and (max-width: 991px) { @content; }
+  }
+  @else if $media == desktop {
+    @media only screen and (min-width: 992px) { @content; }
+  }
+  @else if $media == notdesktop {
+    @media only screen and (max-width: 991px) { @content; }
+  }
+  @else if $media == notmobile {
+    @media only screen and (min-width: 768px) { @content; }
+  }
+}
+
+@mixin respond-to-retina($isRetina) {
+  @if ($isRetina) {
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+           only screen and (        min-device-pixel-ratio: 1.5),
+           only screen and (                min-resolution: 144dpi),
+           only screen and (                min-resolution: 1.5dppx) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+@mixin customize-placeholder {
+
+  &::-webkit-input-placeholder { @content; }
+
+  &:-moz-placeholder { /* Firefox 18- */
+    @content;
+  }
+
+  &::-moz-placeholder {  /* Firefox 19+ */
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+@mixin default-font-style {
+  font-family: $fontFamily;
+  font-weight: 300;
+  font-size: $primaryFontSize;
+  color: $primaryFontColor;
+
+  @include respond-to(tablet) {
+    font-size: 15px;
+  }
+
+  @include respond-to(mobile) {
+    font-size: 13px;
+  }
+}
+
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+/// Event wrapper
+/// @author Harry Roberts
+/// @param {Bool} $self [false] - Whether or not to include current selector
+/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+@mixin on-event($self: false) {
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}
+
+@mixin css-loading-spinner($thick: 3px, $spinnerColor: #c8c8c8, $spinnerBGColor: rgba(200, 200, 200, 0.25)) {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border-top: $thick solid $spinnerBGColor;
+  border-right: $thick solid $spinnerBGColor;
+  border-bottom: $thick solid $spinnerBGColor;
+  border-left: $thick solid $spinnerColor;
+  -webkit-animation: spin 0.8s infinite linear;
+  animation: spin 0.8s infinite linear;
+}
+
+@-webkit-keyframes spin {
+  0%   { @include transform(rotate(0deg));   }
+  100% { @include transform(rotate(359deg)); }
+}
+
+@keyframes spin {
+  0%   { @include transform(rotate(0deg));   }
+  100% { @include transform(rotate(359deg)); }
+}
+
+@mixin positioning-4-edges($value, $positionValue) {
+  position: $positionValue;
+  top: $value;
+  bottom: $value;
+  left: $value;
+  right: $value;
+}
+
+@mixin text-elipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@mixin material-icons($iconName: null) {
+  @if $iconName {
+    content: $iconName;
+  }
+  font-family: 'Material Icons';
+  text-transform: none;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+@mixin inline-block-vertical-top {
+  display: inline-block;
+  vertical-align: top;
+}
+
+@mixin inline-block-vertical-middle {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@mixin btn($left, $top) {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  top: $top;
+  left: $left;
+  transition-duration: 0.5s;
+}
+
+@mixin icon($height, $width) {
+  transition-duration: 0.5s;
+  position: absolute;
+  height: $height;
+  width: $width;
+  top: 32px;
+  background-color: $colorMidNight;
+}
+
+@mixin icon-before($height, $width, $top) {
+  transition-duration: 0.5s;
+  position: absolute;
+  width: $width;
+  height: $height;
+  background-color: $colorMidNight;
+  content: "";
+  top: $top;
+}
+
+@mixin icon-after($height, $width, $top) {
+  transition-duration: 0.5s;
+  position: absolute;
+  width: $width;
+  height: $height;
+  background-color: $colorMidNight;
+  content: "";
+  top: $top;
+}

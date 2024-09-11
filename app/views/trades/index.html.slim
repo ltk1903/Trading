@@ -1,0 +1,12 @@
+.trade-content
+  h1 Trades
+  .future-content
+    = render 'trades/shared/future'
+  .row
+    .col-md-4.grid-margin.stretch-card
+      = render "home/shared/trading_balance_chart"
+    .col-md-8.grid-margin.stretch-card
+      = render "home/shared/spot_trading"
+  .row
+    .col-md-12
+      = render "home/shared/transaction"

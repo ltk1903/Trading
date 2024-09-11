@@ -1,0 +1,65 @@
+en:
+  enums:
+    user_profile:
+      level:
+        notmal: 'Normal'
+        vip1: 'Pro'
+        vip2: 'Pro+'
+      language:
+        vn: 'Tếng Việt'
+        en: 'English'
+      gender:
+        mr: 'Mr'
+        mrs: 'Mrs'
+        ms: 'Ms'
+        miss: 'Miss'
+
+  model:
+    user:
+      id: 'Personal code'
+      name: 'Name'
+      alias: 'Nick name'
+      email: 'Email'
+      phone: 'Phone'
+      password: 'Password'
+      point: 'Point'
+      referral_code: 'Referral code'
+      country: 'Country'
+      address: 'Address'
+      avatar: 'Avatar'
+      country: 'Country'
+      gender: 'Gender'
+      level: 'Level'
+      selfie: 'Selfie'
+      created_at: 'Register at'
+    user_profile:
+      description: 'Description'
+      dob: 'Birthday'
+      language: 'Language'
+
+    trade:
+      user_id: 'User'
+      symbol: 'Symbol'
+      coin_name: 'Coin name'
+      trading_pair: 'Trading pair'
+      transaction_type: 'Transaction type'
+      time_frame: 'Time frame'
+      margin_type: 'Margin'
+      entry_price: 'Entry'
+      stoploss_price: 'Stoploss price'
+      stoloss_percentage: 'Stoloss percentage'
+      stoploss_amount: 'Stoploss amount'
+      
+      target: 'Target profit'
+      take_profit: 'Take profit'
+      liquidation: 'Liquidation'
+      volume_amount: 'Amount'
+      volume_size: 'Size'
+      margin_amount: 'Margin amount'
+      note: 'Note'
+      description: 'Market analytics'
+      status: 'Status'
+      result: 'Result'
+      currency: 'Currency'
+
+

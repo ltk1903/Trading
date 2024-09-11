@@ -8,20 +8,23 @@ html
     = csp_meta_tag
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_include_tag "application"
+    = javascript_include_tag Ckeditor.cdn_url
   body
     .container-scroller
       nav#sidebar.sidebar.sidebar-offcanvas
-        = render 'shared/layout/head_logo'
-        = render 'shared/layout/left_side_menu'
+        = render 'layouts/shared/head_logo'
+        = render 'layouts/shared/left_side_menu'
       .container-fluid.page-body-wrapper
         nav.navbar.p-0.fixed-top.d-flex.flex-row
-          = render 'shared/layout/head_logo_mini'
-          = render 'shared/layout/head_nav_menu'
+          = render 'layouts/shared/head_logo_mini'
+          = render 'layouts/shared/head_nav_menu'
 
         .main-panel
           .content-wrapper
+            / = render "layouts/shared/alert"
+            = bootstrap_flash
             = yield
           
           footer.footer 
-            = render 'shared/layout/footer'
+            = render 'layouts/shared/footer'
             

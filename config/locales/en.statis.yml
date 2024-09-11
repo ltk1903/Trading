@@ -1,0 +1,16 @@
+en:
+  title: "Title"
+  label:
+    market_info: 'Market information' 
+    trade_info: 'Trade information' 
+  nav:
+    trade: 'Trade'
+    new_trade: 'Add new trade'
+    edit_trade: 'Edit trade'
+  
+  # link:
+  button:
+    trade:
+      create_new_trade: 'Create new trade'
+      update_trade: 'Update trade'
+      edit_trade: 'Edit trade'

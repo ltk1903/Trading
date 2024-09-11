@@ -1,0 +1,120 @@
+.layout-grid-view__right-320.mt-4
+    .layout-grid-view__left-side
+      .card
+        .card-body
+          .d-flex.flex-row.justify-content-between
+            h4.sub-title-with-border Thông tin thị trường
+          .row.mt-4
+            .col-sm-12
+              span = @trade.description.to_s.html_safe
+          - @trade.attachments.each do |attachment|
+            .row.mt-4
+              .col-sm-12
+                .text-center
+                  = load_file_url(attachment.resource_url.url, {width: "100%"})
+                  .mt-4 = attachment.name
+
+      .card.mt-4
+        .card-body
+          .d-flex.flex-row.justify-content-between
+            h4.sub-title-with-border Comments
+
+          == render "form_comment", trade: @trade
+
+
+    .layout_grid-view__right-side
+      .card
+        .card-body
+          .d-flex.flex-row.justify-content-between
+            h4.sub-title-with-border 
+              = @trade.transaction_type.to_s.capitalize
+          .row
+            .col-sm-4
+              .text-bold = "#{@trade.symbol}/#{@trade.currency}"
+            .col-sm-4.text-center
+              .text-bold 82000
+            .col-sm-4 
+              .text-right.text-success + 82%
+      .card.mt-4
+        .card-body
+          .d-flex.flex-row.justify-content-between
+            h4.sub-title-with-border
+              = t('label.trade_info')
+          .row
+            .col-sm-6
+              label = t('model.trade.coin_name')
+            .col-sm-6.text-right.text-bold
+              = @trade.coin_name
+          .row
+            .col-sm-6
+              label = t('model.trade.transaction_type')
+            .col-sm-6.text-right
+              = @trade.transaction_type
+          .row
+            .col-sm-6
+              label = t('model.trade.time_frame')
+            .col-sm-6.text-right
+              = @trade.time_frame
+          .row
+            .col-sm-6
+              label = t('model.trade.entry_price')
+            .col-sm-6.text-right
+              = @trade.entry_price
+          .row
+            .col-sm-6
+              label = t('model.trade.stoploss_price')
+            .col-sm-6.text-right
+              = @trade.stoploss_price
+          .row
+            .col-sm-6
+              label = t('model.trade.margin_type')
+            .col-sm-6.text-right
+              span.text-danger = @trade.margin_type
+          .row
+            .col-sm-6
+              label = t('model.trade.stoloss_percentage')
+            .col-sm-6.text-right
+              span.text-danger = @trade.stoloss_percentage
+              span.text-danger %
+          .row
+            .col-sm-6
+              label = t('model.trade.volume_amount')
+            .col-sm-6.text-right
+              = @trade.volume_amount
+          .row
+            .col-sm-6
+              label = t('model.trade.volume_size')
+            .col-sm-6.text-right
+              = @trade.volume_size
+          .row
+            .col-sm-6
+              label = t('model.trade.target')
+            .col-sm-6.text-right
+              = @trade.target
+
+      
+
+
+
+      .card.mt-4
+        .card-body
+          .d-flex.flex-row.justify-content-between
+            h4.sub-title-with-border
+              label Tiêu chí vào lệnh
+          table.table.table-sm
+            colgroup
+              col width='80'
+              col width='20%'
+            tbody
+              - @trade.trade_criterions.each do |trade_criterion|
+                - text_color = criterion_section_color(trade_criterion.criterion_section)
+                - text_section = "<span class='#{text_color}'> [#{trade_criterion.criterion_section}]</span>  #{trade_criterion.criterion_title}"
+                - text_label = trade_criterion.criterion_is_required ? text_section + "<span class='text-danger' >(*)</span>" : text_section
+                tr
+                  td = text_label.html_safe
+                  td.text-right
+                    - if trade_criterion.passed.present?
+                      .text-success YES
+                    - else
+                      .text-danger NO
+

@@ -1,0 +1,10 @@
+p style="color: green" = notice
+
+== render @hold
+
+div
+  => link_to "Edit this hold", edit_hold_path(@hold)
+  '|
+  =< link_to "Back to holds", holds_path
+
+  = button_to "Destroy this hold", @hold, method: :delete

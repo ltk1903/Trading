@@ -1,0 +1,157 @@
+= simple_form_for(@trade) do |f|
+  .layout-grid-view__right-320.mt-4
+    .layout-grid-view__left-side
+      .card
+        .card-body
+          .row
+            .col-sm-12
+              .row
+                .col-sm-3
+                  label = t('model.trade.currency')
+                  = f.input :currency, label: false, input_html: { value: 'USDT'}
+                .col-sm-3
+                  label = t('model.trade.symbol')
+                  = f.input :symbol, label: false
+                .col-sm-6
+                  label = t('model.trade.coin_name')
+                  = f.input :coin_name, label: false
+              .row
+                .col-sm-12
+                  label = t('model.trade.description')
+                  = f.cktext_area :description, :as => :ckeditor
+
+              .mt-4.d-flex.flex-row.justify-content-between
+                h4.sub-title-with-border Attachement Photo
+              = f.fields_for :attachments do |fa|
+                .row
+                  .col-sm-8
+                    = fa.input :name
+                  .col-sm-4
+                    = fa.input :resource_url, as: :file, label: 'Select file'
+                = fa.input :description, as: :text, label: 'Hình ghi chú'
+          / .row
+            .col-sm-12
+              .card
+                .card-body
+                  .row
+                    .col-sm-12
+                      label Tiêu chí vào lệnh
+                      - if @criterions.present?
+                        = f.fields_for :trade_criterions do |fc|
+                          .row.trade_criterions--form_entry
+                            .col-sm-12.mb-0
+                              - text_color = criterion_section_color(fc.object.criterion_section)
+                              - text_section = "<span class='#{text_color}'> [#{fc.object.criterion_section}]</span>  #{fc.object.criterion_title}"
+                              - text_label = fc.object.criterion_is_required ? text_section + "<span class='text-danger' >(*)</span>" : text_section
+                              = fc.input :passed, label: text_label.html_safe , label_html: { class: "text-white" }
+                              = fc.input :criterion_id,  label_html: { class: "text-white" }, :as => :hidden
+      
+      h2.mt-4.mb-2.page-title Tiêu chí vào lệnh 
+      .card
+        .card-body
+          - if @criterions.present?
+            - trends  = []
+            - entries = []
+            - mentals = []
+            - markets = []
+            = f.fields_for :trade_criterions do |fc|
+              - trends  << fc if fc.object.criterion_section.to_s == 'trend'
+              - entries << fc if fc.object.criterion_section.to_s == 'entry'
+              - mentals << fc if fc.object.criterion_section.to_s == 'mental'
+              - markets << fc if fc.object.criterion_section.to_s == 'market'
+            .row
+              .col-sm-6
+                h4.sub-title-with-border Xu hướng sóng
+                - trends.each do |trend|
+                  .row.trade_criterions--form_entry
+                    .col-sm-12.mb-0
+                      - text_color = criterion_section_color(trend.object.criterion_section)
+                      - text_section = "<span class='#{text_color}'> [#{trend.object.criterion_section}]</span>  #{trend.object.criterion_title}"
+                      - text_label = trend.object.criterion_is_required ? text_section + "<span class='text-danger' >(*)</span>" : text_section
+                      = trend.input :passed, label: text_label.html_safe , label_html: { class: "text-white" }
+                      = trend.input :criterion_id,  label_html: { class: "text-white" }, :as => :hidden
+              .col-sm-6
+                h4.sub-title-with-border Điểm vào lệnh
+                - entries.each do |entry|
+                  .row.trade_criterions--form_entry
+                    .col-sm-12.mb-0
+                      - text_color = criterion_section_color(entry.object.criterion_section)
+                      - text_section = "<span class='#{text_color}'> [#{entry.object.criterion_section}]</span>  #{entry.object.criterion_title}"
+                      - text_label = entry.object.criterion_is_required ? text_section + "<span class='text-danger' >(*)</span>" : text_section
+                      = entry.input :passed, label: text_label.html_safe , label_html: { class: "text-white" }
+                      = entry.input :criterion_id,  label_html: { class: "text-white" }, :as => :hidden
+            .row.mt-4
+              .col-sm-6
+                h4.sub-title-with-border trạng thái tinh thần 
+                - mentals.each do |mental|
+                  .row.trade_criterions--form_entry
+                    .col-sm-12.mb-0
+                      - text_color = criterion_section_color(mental.object.criterion_section)
+                      - text_section = "<span class='#{text_color}'> [#{mental.object.criterion_section}]</span>  #{mental.object.criterion_title}"
+                      - text_label = mental.object.criterion_is_required ? text_section + "<span class='text-danger' >(*)</span>" : text_section
+                      = mental.input :passed, label: text_label.html_safe , label_html: { class: "text-white" }
+                      = mental.input :criterion_id,  label_html: { class: "text-white" }, :as => :hidden
+              .col-sm-6
+                h4.sub-title-with-border Tình trạng thị trường
+                - markets.each do |market|
+                  .row.trade_criterions--form_entry
+                    .col-sm-12.mb-0
+                      - text_color = criterion_section_color(market.object.criterion_section)
+                      - text_section = "<span class='#{text_color}'> [#{market.object.criterion_section}]</span>  #{market.object.criterion_title}"
+                      - text_label = market.object.criterion_is_required ? text_section + "<span class='text-danger' >(*)</span>" : text_section
+                      = market.input :passed, label: text_label.html_safe , label_html: { class: "text-white" }
+                      = market.input :criterion_id,  label_html: { class: "text-white" }, :as => :hidden
+
+    .layout_grid-view__right-side
+      .card
+        .card-body
+          .d-flex.flex-row.justify-content-between
+            h4.sub-title-with-border
+              = t('label.trade_info')
+          .row
+            .col-sm-6
+              label = t('model.trade.transaction_type')
+            .col-sm-6.text-right
+              = f.input :transaction_type, label: false, input_html: { class: 'select-full-size text-center' }
+          .row
+            .col-sm-6
+              label = t('model.trade.time_frame')
+            .col-sm-6.text-right
+              = f.input :time_frame, label: false, input_html: { class: 'select-full-size text-center' }
+          .row
+            .col-sm-6
+              label = t('model.trade.margin_type')
+            .col-sm-6.text-right
+              = f.input :margin_type, label: false, input_html: { class: 'select-full-size text-center' }
+          .row
+            .col-sm-12
+              label = t('model.trade.entry_price')
+              = f.input :entry_price, label: false
+          .row
+            .col-sm-12
+              label = t('model.trade.stoploss_price')
+              = f.input :stoploss_price, label: false
+          .row
+            .col-sm-6
+              label = t('model.trade.stoloss_percentage')
+            .col-sm-6.text-right
+              span.text-danger.text-bold Recommend 2%
+          .row
+            .col-sm-12
+              = f.input :stoloss_percentage, label: false, id: 'trade_stoloss_percentage'
+          .row
+            .col-sm-12
+              label = t('model.trade.volume_amount')
+              = f.input :volume_amount, label: false
+          .row
+            .col-sm-12
+              label = t('model.trade.volume_size')
+              = f.input :volume_size, label: false
+          .row
+            .col-sm-12
+              label = t('model.trade.target')
+              = f.input :target, label: false
+          .row
+            .col-sm-12.text-right
+              - bnt_text = @trade.id.nil? ? t('button.trade.create_new_trade') : t('button.trade.update_trade')
+              = f.button :submit, class: 'btn btn-primary', value: bnt_text

@@ -1,0 +1,10 @@
+p style="color: green" = notice
+
+== render @stoploss_frame
+
+div
+  => link_to "Edit this stoploss frame", edit_stoploss_frame_path(@stoploss_frame)
+  '|
+  =< link_to "Back to stoploss frames", stoploss_frames_path
+
+  = button_to "Destroy this stoploss frame", @stoploss_frame, method: :delete

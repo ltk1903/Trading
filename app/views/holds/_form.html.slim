@@ -1,0 +1,20 @@
+= simple_form_for(@hold) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  .form-inputs
+    = f.input :user_id
+    = f.input :symbol
+    = f.input :coin_name
+    = f.input :target
+    = f.input :volume_size
+    = f.input :volume_amount
+    = f.input :entry_price
+    = f.input :status
+    = f.input :take_profit
+    = f.input :note
+    = f.input :description
+    = f.input :entry_photo
+
+  .form-actions
+    = f.button :submit

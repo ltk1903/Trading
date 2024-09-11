@@ -1,0 +1,52 @@
+@import 'abstract/_variables';
+@import "font-awesome";
+
+
+
+h1.page-title {
+  font-size: 28px;
+  font-weight: bold;
+}
+.sub-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.sub-title-with-border {
+  font-size: 20px;
+  font-weight: bold;
+  border-bottom: solid 1px;
+  border-color: $borderColor;
+  padding-bottom: 8px;
+  width: 100%;
+  margin-bottom: 28px;
+}
+.card-body hr {
+  border-color: $borderColor;
+
+}
+
+.card.card-body-white-content {
+  background-color: $backgroundColorDark;
+  color: $textDark;
+}
+
+.layout-grid-view__right-320 {
+  display: grid;
+  // grid-template-columns: 1fr 360px;
+  // grid-template-columns: 1fr 420px;
+  grid-template-columns: 1fr 460px;
+
+  .layout-grid-view__left-side {
+    // Todo:...
+  }
+
+  .layout_grid-view__right-side {
+    margin-left: 28px;
+  }
+}
+
+.select-full-size{
+  width: 100%;
+  height: 34px;
+}

@@ -1,0 +1,73 @@
+.user-profile-page
+  h1.page-title Thông tin tài khoản
+  .page-content.mt-4
+    / .card.card-body-white-content
+    .card
+      .card-body
+        .user-profile__content
+          .user-profile__content-left
+            .user-profile_avatar
+              = image_tag(avartar_default(@user_profile))
+          .user-profile__content-right
+            .personal-title.text-white = @user_profile.user_name
+            .sub-personal-title.profile--user_alias = @user_profile.user_alias
+            .profile--description = @user_profile.description unless @user_profile.description.blank?
+            .row.mt-2
+              .col-md-12
+                .row.mt-2
+                  .col-md-6.col-xl-6
+                    span.font-weight-bold =<> t('model.user.id')
+                    span =<> @user_profile.user_id
+                  .col-md-6.col-xl-6
+                    span.font-weight-bold =<> t('model.user_profile.dob')
+                    span =<> format_date @user_profile.dob
+                .row.mt-2
+                  .col-md-6.col-xl-6
+                    span.font-weight-bold =<> t('model.user.email')
+                    span =<> @user_profile.user_email
+                  .col-md-6.col-xl-6
+                    span.font-weight-bold =<> t('model.user.gender')
+                    span =<> @user_profile.gender_text
+                .row.mt-2
+                  .col-md-6.col-xl-6
+                    span.font-weight-bold =<> t('model.user.phone')
+                    span =<> @user_profile.user_phone
+                  .col-md-6.col-xl-6
+                    span.font-weight-bold =<> t('model.user_profile.language')
+                    span =<> @user_profile.language_text
+                .row.mt-2
+                  .col-md-6.col-xl-6
+                    span.font-weight-bold =<> t('model.user.created_at')
+                    span =<> format_date @user_profile.created_at
+                  .col-md-6.col-xl-6
+                    span.font-weight-bold =<> t('model.user.country')
+                    span =<> @user_profile.country
+                .row.mt-2
+                  .col-md-6.col-xl-6
+                    span.font-weight-bold =<> t('model.user.level')
+                    span =<> @user_profile.level
+                  .col-md-6.col-xl-6
+                    span.font-weight-bold =<> t('model.user.address')
+                    span =<> @user_profile.address
+
+    / .card.card-body-white-content.profile__calculate_amount.mt-4
+    .card.profile__calculate_amount.mt-4
+      .card-body
+        .row.mt-2
+          .col-md-3.col-xl-3
+            .text-center
+              .font-weight-bold.text-primary = t('model.user.point')
+              .font-weight-bold.text-primary = @user_profile.user_point.to_i
+          .col-md-3.col-xl-3
+            .text-center
+              .font-weight-bold.text-primary Total trade
+              .font-weight-bold.text-primary 1000
+          .col-md-3.col-xl-3
+            .text-center
+              .font-weight-bold.text-primary Trading PNL
+              .font-weight-bold.text-primary 1234 / 2000
+          .col-md-3.col-xl-3
+            .text-center
+              .font-weight-bold.text-primary Holding PNL
+              .font-weight-bold.text-primary 1234 / 2000
+        
