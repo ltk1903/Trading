@@ -14,8 +14,6 @@ module CriterionSectionEnum
               entry:            CRITERION_SECTION_ENTRY,
               mental:           CRITERION_SECTION_MENTAL,
               market:           CRITERION_SECTION_MARKET,
-              
-              
             },
             predicates: { prefix: true },
             scope: true,

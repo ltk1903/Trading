@@ -10,6 +10,7 @@ class TradesController < ApplicationController
 
   # GET /trades/1 or /trades/1.json
   def show
+    @trade.comments.build
   end
 
   # GET /trades/new
@@ -22,30 +23,20 @@ class TradesController < ApplicationController
         symbol:               'BTC',
         coin_name:            'Bitcon',
       )
-
-
     @trade.attachments.build
-    # @trade.attachments.build(criterion_id: criterion.id, passed: false)
-    # @criterions = Criterion.default_spot.order(section: 'ASC')
     @criterions.each do |criterion|
       @trade.trade_criterions.build(criterion_id: criterion.id, passed: false)
     end
-    # @criterions = Criterion.default_margin if params[:transaction_type] == TradeTransactionTypeEnum::TRADE_TRANSACTION_TYPE_MARGIN
-    # @criterions = Criterion.default_future if params[:transaction_type] == TradeTransactionTypeEnum::TRADE_TRANSACTION_TYPE_FUTURE
-
   end
 
   # GET /trades/1/edit
   def edit
-    # @criterions = Criterion.default_spot.order(section: 'ASC')
   end
 
   # POST /trades or /trades.json
   def create
     @trade = Trade.new(trade_params)
 
-    byebug
-    # check params
     respond_to do |format|
       if @trade.save
         format.html { redirect_to trade_url(@trade), notice: "Trade was successfully created." }

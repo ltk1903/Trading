@@ -1,4 +1,5 @@
 .new-trade-page
   h1.page-title = t('nav.trade')
   .trade-content
-    == render "form", trade: @trade
+    == render "trades/shared/detail", trade: @trade
+    / == render "form_comment", trade: @trade

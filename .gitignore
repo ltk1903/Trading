@@ -48,6 +48,8 @@ node_modules
 */public/system
 */public/uploads
 */public/development
+public/uploads
+public/development
 .env
 .production
 .staging

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_03_07_011642) do
+ActiveRecord::Schema[7.0].define(version: 2024_06_02_145125) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -34,6 +34,16 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_07_011642) do
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
     t.index ["type"], name: "index_ckeditor_assets_on_type"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text "content"
+    t.string "photo"
+    t.integer "status"
+    t.bigint "relatable_id"
+    t.string "relatable_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "criterion_translations", force: :cascade do |t|

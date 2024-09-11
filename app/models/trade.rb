@@ -35,8 +35,11 @@ class Trade < ApplicationRecord
   include TradeMarginTypeEnum
   include TradeTimeFrameEnum
 
+  mount_uploader :entry_photo, PhotoUploader
+
   has_many :trade_criterions
   has_many :attachments, as: :relatable, dependent: :destroy
+  has_many :comments, as: :relatable, dependent: :destroy
 
 
   accepts_nested_attributes_for :trade_criterions, reject_if: :all_blank, allow_destroy: true

@@ -1,0 +1,9 @@
+= simple_form_for(@trade) do |f|
+  = f.fields_for :comments do |fa|
+    .row
+      .col-sm-12
+        = fa.input :content, as: :text, label: 'Content'
+        / = fa.cktext_area :content, :as => :ckeditor
+    .row
+      .col-sm-12
+        = fa.input :photo, as: :file, label: 'Select file'

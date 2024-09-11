@@ -34,7 +34,8 @@ h1.page-title {
 .layout-grid-view__right-320 {
   display: grid;
   // grid-template-columns: 1fr 360px;
-  grid-template-columns: 1fr 420px;
+  // grid-template-columns: 1fr 420px;
+  grid-template-columns: 1fr 460px;
 
   .layout-grid-view__left-side {
     // Todo:...
@@ -44,7 +45,6 @@ h1.page-title {
     margin-left: 28px;
   }
 }
-
 
 .select-full-size{
   width: 100%;

@@ -201,6 +201,5 @@ gem 'rails_admin', git: 'https://github.com/sferik/rails_admin.git'
 
 # for JS
 gem "jsbundling-rails", "~> 1.0"
-
-
 gem "cssbundling-rails"
+
